@@ -28,6 +28,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = 0
     @comment.topic_id = params[:topic_id]
+    
+    @topic = Topic.find(params[:topic_id])
 
     respond_to do |format|
       if @comment.save
