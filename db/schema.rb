@@ -14,15 +14,15 @@
 ActiveRecord::Schema.define(version: 20140117131446) do
 
   create_table "comments", force: true do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "topic_id",   null: false
-    t.text     "body",       null: false
+    t.integer  "user_id",                null: false
+    t.integer  "topic_id",               null: false
+    t.text     "body",       limit: 300, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "comments", ["topic_id"], name: "index_comments_on_topic_id", using: :btree
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+  add_index "comments", ["topic_id"], name: "index_comments_on_topic_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "favorites", force: true do |t|
     t.integer  "user_id",     null: false
@@ -32,23 +32,23 @@ ActiveRecord::Schema.define(version: 20140117131446) do
     t.datetime "updated_at"
   end
 
-  add_index "favorites", ["target_id"], name: "index_favorites_on_target_id", using: :btree
-  add_index "favorites", ["target_type"], name: "index_favorites_on_target_type", using: :btree
-  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
+  add_index "favorites", ["target_id"], name: "index_favorites_on_target_id"
+  add_index "favorites", ["target_type"], name: "index_favorites_on_target_type"
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
 
   create_table "topics", force: true do |t|
-    t.integer  "user_id",    null: false
-    t.string   "title",      null: false
-    t.text     "body",       null: false
+    t.integer  "user_id",                null: false
+    t.string   "title",                  null: false
+    t.text     "body",       limit: 300, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "topics", ["user_id"], name: "index_topics_on_user_id", using: :btree
+  add_index "topics", ["user_id"], name: "index_topics_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
-    t.text     "profile"
+    t.text     "profile",    limit: 300
     t.datetime "created_at"
     t.datetime "updated_at"
   end
