@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+
+<%= render partial: "topics/panel", as: :topic, object: @topic %>
+
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>

@@ -1,0 +1,15 @@
+<div class="topic highlight">
+  <div class="title">
+    <%= link_to topic.title, new_topic_comment_path(topic) %>
+  </div>
+  <div class="date">
+    <%= topic.created_at %>
+  </div>
+  <div class="body">
+    <%= topic.body %>
+  </div>
+  <div class="comments">
+    <%= render partial: "comments/panel", as: :comment, collection: topic.comments  %>
+  </div>
+  <%= link_to "コメントをつける", new_topic_comment_path(topic) %>
+</div>

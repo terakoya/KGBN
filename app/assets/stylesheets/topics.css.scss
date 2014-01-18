@@ -1,0 +1,37 @@
+.topics {
+  .topic {
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .body {
+      font-size: 14px;
+      padding-top: 10px;
+      padding-left: 10px;
+      margin-bottom: 5px;
+    }
+    .comments {
+      .comment {
+        .body {
+          font-size: 12px;
+          padding-top: 5px;
+          padding-left: 5px;
+        }
+      }
+      .highlight {
+        padding: 3px 14px;
+        margin-bottom: 14px;
+        background-color: #f0f0f2;
+        border: 1px solid #f1f1f8;
+        border-radius: 4px;
+      }
+    }
+  }
+  .highlight {
+    padding: 9px 14px;
+    margin-bottom: 14px;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+  }
+}
