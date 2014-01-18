@@ -52,4 +52,3 @@ group :development, :test do
   gem "spring"
   gem "rb-fsevent"
 end
-
