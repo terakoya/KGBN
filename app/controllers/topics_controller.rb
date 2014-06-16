@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+  before_filter :redirect_unsign_in_user
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
   # GET /topics

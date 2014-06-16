@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_filter :redirect_unsign_in_user
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /comments

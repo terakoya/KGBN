@@ -1,4 +1,5 @@
 Soshitara::Application.routes.draw do
+  devise_for :users
   resources :favorites
 
   resources :topics do
